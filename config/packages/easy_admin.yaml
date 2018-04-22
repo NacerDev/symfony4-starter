@@ -1,0 +1,25 @@
+parameters:
+    app.path.product_images: /images/articles
+easy_admin:
+    entities:
+#        # List the entity class name you want to manage
+        Article:
+            class: App\Entity\Article
+            list:
+                fields:
+                    - 'title'
+                    - 'date'
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+            show:
+                fields:
+                    - 'title'
+                    - 'body'
+                    - 'date'
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+            form:
+                fields:
+                    - 'title'
+                    - 'body'
+                    - 'date'
+                    - { property: 'imageFile', type: 'vich_file' }
+

@@ -1,0 +1,17 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}
+Starter 
+{% endblock %}
+
+
+{% block body %}
+<h1>Articles</h1>
+{% for article in articles %}
+<h4>{{ article.title }}</h4>
+<span>{{ article.date | date("d-m-Y") }}</span>
+<img width="100" src="/images/articles/{{ article.image }}"  />
+<p>{{ article.body }}</p>
+<hr>
+{%  endfor %}
+{% endblock %}

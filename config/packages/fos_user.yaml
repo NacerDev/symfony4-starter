@@ -1,0 +1,12 @@
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: App\Entity\User
+    service:                              
+        mailer: app.mailer 
+    registration:
+        confirmation:
+            enabled: true
+    from_email:
+        address: "%env(MAILER_USER_ADRESS)%"
+        sender_name: "%env(MAILER_USER_ADRESS)%"
